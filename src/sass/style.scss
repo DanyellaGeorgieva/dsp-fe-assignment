@@ -1,0 +1,129 @@
+$color-primary: #009cc0;
+$color-secondary-darker: #4e0f69;
+$color-grey: #656d78;
+$color-light-grey: #F5F7FA;
+$color-white: #fff;
+$color-black: #323133;
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import './reset.scss';
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Poppins', sans-serif;
+}
+
+.background-light {
+  background: $color-light-grey;
+}
+
+.background-dark {
+	background: $color-secondary-darker;
+}
+
+.d-navbar {
+	padding: 0 60px;
+	height: 112px;
+	justify-content: flex-end;
+}
+
+.d-navbar-logo {
+	position: absolute;
+	left: 60px;
+}
+
+.d-navbar-nav {
+	flex-direction: row;
+	align-items: center;
+}
+
+.nav-item {
+	margin-right: 48px;
+	font-size: 14px;
+	font-weight: 500;
+	color: $color-grey;
+}
+
+.d-btn {
+	background: $color-primary;
+	color: $color-white;
+	font-size: 14px;
+	font-weight: 500;
+	border-radius: 4px;
+	padding: 12px 48px;
+}
+
+.section-hero {
+	color: $color-white;
+
+  padding: 106px 0 152px 0;
+
+  background: url('../img/bg.png');
+  background-size: cover;
+  background-position: center center;
+
+  .d-btn {
+    padding: 20px 88px;
+  }
+}
+
+.section-hero-title {
+	font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.section-hero-desc {
+  opacity: 0.8;
+  margin-bottom: 14px;
+}
+
+section {
+  color: $color-black;
+}
+
+section h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.section-works {
+  padding-top: 160px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1400px) {
+	.container {
+		max-width: 1160px;
+	}
+}
+
+@media (min-width: 1200) {
+	.container {
+		max-width: 1160px;
+	}
+}
