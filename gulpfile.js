@@ -44,13 +44,16 @@ function css() {
 
 function js() {
 	return gulp
-		.src('src/js/*.js')
+		.src([
+			'node_modules/swiper/swiper-bundle.esm.browser.min.js',
+			'src/js/*.js'
+		])
 		.pipe(
 			jsImport({
 				hideConsole: true,
 			})
 		)
-		.pipe(concat('all.js'))
+		.pipe(concat('index.js'))
 		.pipe(gulpIf(isProd, uglify()))
 		.pipe(gulp.dest('dist/js'));
 }

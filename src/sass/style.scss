@@ -1,16 +1,23 @@
 $color-primary: #009cc0;
 $color-secondary-darker: #4e0f69;
-$color-grey: #656d78;
-$color-light-grey: #F5F7FA;
+$color-grey-1: #656d78;
+$color-grey-4: #f5f7fa;
 $color-white: #fff;
 $color-black: #323133;
 
+@mixin d-box-shadow {
+	box-shadow: 0px 24px 40px rgba(72, 101, 114, 0.05);
+}
+
 @import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/swiper/swiper-bundle';
 @import './reset.scss';
 
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+
+	padding-bottom: 200px;
 }
 
 h1,
@@ -20,10 +27,11 @@ h4,
 h5,
 h6 {
 	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
 }
 
 .background-light {
-  background: $color-light-grey;
+	background: $color-grey-4;
 }
 
 .background-dark {
@@ -46,11 +54,11 @@ h6 {
 	align-items: center;
 }
 
-.nav-item {
+.d-nav-item {
 	margin-right: 48px;
 	font-size: 14px;
 	font-weight: 500;
-	color: $color-grey;
+	color: $color-grey-1;
 }
 
 .d-btn {
@@ -58,6 +66,7 @@ h6 {
 	color: $color-white;
 	font-size: 14px;
 	font-weight: 500;
+	line-height: 24px;
 	border-radius: 4px;
 	padding: 12px 48px;
 }
@@ -65,40 +74,102 @@ h6 {
 .section-hero {
 	color: $color-white;
 
-  padding: 106px 0 152px 0;
+	padding: 105px 0 152px 0;
 
-  background: url('../img/bg.png');
-  background-size: cover;
-  background-position: center center;
+	background: url('../img/bg.png');
+	background-size: cover;
+	background-position: center center;
 
-  .d-btn {
-    padding: 20px 88px;
-  }
+	&-title {
+		font-size: 40px;
+		line-height: 56px;
+		margin-bottom: 16px;
+	}
+
+	&-desc {
+		opacity: 0.8;
+		margin-bottom: 24px;
+		line-height: 28px;
+	}
+
+	.d-btn {
+		padding: 20px 88px;
+	}
 }
 
-.section-hero-title {
-	font-size: 40px;
-  margin-bottom: 8px;
+.d-section {
+	padding-top: 160px;
+	color: $color-black;
+
+	&-paragraph {
+		color: $color-grey-1;
+	}
+
+	&-img {
+		width: 100%;
+	}
+
+	&-h2 {
+		margin-bottom: 48px;
+		font-size: 32px;
+	}
+
+	&-h3 {
+		font-size: 24px;
+		margin-bottom: 24px;
+	}
 }
 
-.section-hero-desc {
-  opacity: 0.8;
-  margin-bottom: 14px;
+.d-col-plan {
+	margin-top: 120px;
+
+	img {
+		margin-bottom: 48px;
+		border-radius: 32px;
+		@include d-box-shadow();
+	}
+
+	p {
+		min-height: 84px;
+		padding: 0 60px;
+		margin-bottom: 48px;
+	}
+
+	.d-btn {
+		width: 163px;
+	}
 }
 
-section {
-  color: $color-black;
+.swiper-slide {
+	background: $color-white;
+	padding: 64px 40px 48px 40px;
+	border-radius: 8px;
+
+	&-testimonial {
+		font-size: 28px;
+		line-height: 48px;
+		color: $color-black;
+		margin-bottom: 56px;
+	}
+
+	&-name {
+		font-weight: 500;
+		color: $color-secondary-darker;
+	}
+
+	&-company {
+		font-size: 12px;
+		color: $color-grey-1;
+	}
 }
 
-section h2 {
-  font-size: 32px;
-  font-weight: 700;
-}
 
-.section-works {
-  padding-top: 160px;
-  
-}
+
+
+
+
+
+
 
 
 
