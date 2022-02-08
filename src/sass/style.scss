@@ -2,6 +2,7 @@ $color-primary: #009cc0;
 $color-secondary: #662483;
 $color-secondary-darker: #4e0f69;
 $color-grey-1: #656d78;
+$color-grey-2: #aab2bd;
 $color-grey-4: #f5f7fa;
 $color-white: #fff;
 $color-black: #323133;
@@ -17,6 +18,10 @@ $color-black: #323133;
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h1,
@@ -48,7 +53,7 @@ h6 {
 	.d-section-paragraph {
 		color: $color-white;
 		opacity: 0.6;
-		font-size: 14px;
+		font-size: 0.875rem;
 		margin-bottom: 88px;
 	}
 }
@@ -71,15 +76,19 @@ h6 {
 
 .d-nav-item {
 	margin-right: 48px;
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 500;
 	color: $color-grey-1;
+}
+
+.nav-link:hover {
+	color: $color-primary;
 }
 
 .d-btn {
 	background: $color-primary;
 	color: $color-white;
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 500;
 	line-height: 24px;
 	border-radius: 4px;
@@ -96,7 +105,7 @@ h6 {
 	background-position: center center;
 
 	&-title {
-		font-size: 40px;
+		font-size: 2.5rem;
 		line-height: 56px;
 		margin-bottom: 16px;
 	}
@@ -126,17 +135,17 @@ h6 {
 
 	&-h2 {
 		margin-bottom: 48px;
-		font-size: 32px;
+		font-size: 2rem;
 	}
 
 	&-h3 {
-		font-size: 24px;
+		font-size: 1.5rem;
 		margin-bottom: 24px;
 	}
 
 	&-h5 {
 		color: $color-white;
-		font-size: 12px;
+		font-size: 0.75rem;
 		margin-bottom: 24px;
 	}
 
@@ -145,10 +154,10 @@ h6 {
 		font-family: 'Poppins', sans-serif;
 		font-weight: 700;
 		text-decoration: underline;
-		font-size: 20px;
+		font-size: 1.25rem;
 
 		&-extra {
-			font-size: 12px;
+			font-size: 0.75rem;
 			color: $color-white;
 			opacity: 0.6;
 			display: block;
@@ -192,7 +201,7 @@ h6 {
 	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.02);
 
 	&-testimonial {
-		font-size: 28px;
+		font-size: 1.75rem;
 		line-height: 48px;
 		color: $color-black;
 		margin-bottom: 56px;
@@ -204,7 +213,7 @@ h6 {
 	}
 
 	&-company {
-		font-size: 12px;
+		font-size: 0.75rem;
 		color: $color-grey-1;
 	}
 }
@@ -270,6 +279,33 @@ h6 {
 	right: 190px;
 
 	z-index: 10;
+}
+
+.d-footer {
+	padding: 48px 0;
+	font-size: 0.75rem;
+	color: $color-grey-1;
+
+	&-container {
+		display: flex;
+	}
+
+	&-copy {
+		color: $color-grey-2;
+	}
+
+	&-links {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&-link {
+		margin-right: 48px;
+	}
+
+	&-link:last-child {
+		margin-right: 0;
+	}
 }
 
 @media (min-width: 1400px) {
