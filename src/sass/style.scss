@@ -1,3 +1,7 @@
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/swiper/swiper-bundle';
+@import './reset.scss';
+
 $color-primary: #009cc0;
 $color-secondary: #662483;
 $color-secondary-darker: #4e0f69;
@@ -11,17 +15,13 @@ $color-black: #323133;
 	box-shadow: 0px 24px 40px rgba(72, 101, 114, 0.05);
 }
 
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import 'node_modules/swiper/swiper-bundle';
-@import './reset.scss';
-
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 }
 
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 h1,
@@ -34,7 +34,7 @@ h6 {
 	font-weight: 700;
 }
 
-.background-light {
+.d-background-light {
 	background: $color-grey-4;
 }
 
@@ -95,7 +95,7 @@ h6 {
 	padding: 12px 48px;
 }
 
-.section-hero {
+.d-section-hero {
 	color: $color-white;
 
 	padding: 105px 0 152px 0;
@@ -123,10 +123,15 @@ h6 {
 
 .d-section {
 	padding-top: 160px;
+	padding-bottom: 120px;
 	color: $color-black;
 
 	&-paragraph {
 		color: $color-grey-1;
+
+		&--offset {
+			padding-right: 100px;
+		}
 	}
 
 	&-img {
@@ -164,13 +169,14 @@ h6 {
 		}
 	}
 
-	&--testimonials {
-		padding-bottom: 120px;
+	&--no-offset {
+		padding-bottom: 0;
 	}
 }
 
-.d-col-plan {
+.d-plans {
 	margin-top: 120px;
+	text-align: center;
 
 	img {
 		margin-bottom: 48px;
@@ -189,18 +195,18 @@ h6 {
 	}
 }
 
-.swiper {
+.d-swiper {
 	border-radius: 8px;
 	padding: 40px 40px 112px 40px;
 }
 
-.swiper-slide {
+.d-swiper-slide {
 	background: $color-white;
 	padding: 64px 40px 48px 40px;
 	border-radius: 8px;
 	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.02);
 
-	&-testimonial {
+	&-paragraph {
 		font-size: 1.75rem;
 		line-height: 48px;
 		color: $color-black;
@@ -218,8 +224,8 @@ h6 {
 	}
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+.d-swiper-button-prev,
+.d-swiper-button-next {
 	top: 100%;
 	margin-top: -50px;
 
@@ -228,28 +234,30 @@ h6 {
 	border-radius: 50%;
 	background: $color-white;
 
+	z-index: 100;
+
 	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.02);
 }
 
-.swiper-button-prev {
+.d-swiper-button-prev {
 	left: 50%;
 	transform: translateX(calc(-100% - 8px));
 }
 
-.swiper-button-next {
+.d-swiper-button-next {
 	right: 50%;
 	transform: translateX(calc(100% + 8px));
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
+.d-swiper-button-prev:after,
+.d-swiper-button-next:after {
 	content: '';
 	background: url('../img/arrow.svg');
 	width: 16px;
 	height: 16px;
 }
 
-.swiper-button-next:after {
+.d-swiper-button-next:after {
 	transform: scaleX(-1);
 }
 
@@ -281,6 +289,52 @@ h6 {
 	z-index: 10;
 }
 
+.d-about-img-wrapper {
+	position: relative;
+
+	&:after {
+		content: '';
+		background: url('../img/dots-raster.png');
+		width: 240px;
+		height: 240px;
+		position: absolute;
+		top: -40px;
+		right: -40px;
+	}
+
+	&--offset {
+		margin-top: 120px;
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+.d-about-img-team {
+	margin-top: 122px;
+}
+
+.d-about-img-services {
+	margin-bottom: 88px;
+}
+
+.d-section-quote {
+	font-size: 1.5rem;
+	margin-bottom: 40px;
+	margin-top: 88px;
+	padding-right: 100px;
+
+	& span {
+		color: $color-primary;
+	}
+}
+
+.d-quotes {
+	margin: 32px auto;
+	opacity: 0.2;
+}
+
 .d-footer {
 	padding: 48px 0;
 	font-size: 0.75rem;
@@ -308,14 +362,215 @@ h6 {
 	}
 }
 
+// Overwrite bootstrap default container width
 @media (min-width: 1400px) {
 	.container {
 		max-width: 1160px;
 	}
 }
 
-@media (min-width: 1200) {
+// Overwrite bootstrap default container width
+@media (min-width: 1200px) {
 	.container {
 		max-width: 1160px;
+	}
+}
+
+// xs: 0,
+// sm: 576px,
+// md: 768px,
+// lg: 992px,
+// xl: 1200px,
+// xxl: 1400px
+
+//Bootstrap breakpoint for xl devices
+@media (max-width: 1200px) {
+	.d-img-arrows-down {
+		right: 80px;
+	}
+}
+
+// Bootstrap breakpoint for lg devices
+@media (max-width: 992px) {
+}
+
+//Bootstrap breakpoint for md devices
+@media (max-width: 768px) {
+	body {
+		font-size: 14px;
+	}
+
+	// Overwrite bootstrap gutters
+	.row > * {
+		padding-right: calc(var(--bs-gutter-x));
+		padding-left: calc(var(--bs-gutter-x));
+	}
+
+	.d-btn {
+		font-size: 1.14rem;
+	}
+
+	.d-navbar {
+		padding: 8px 16px;
+		justify-content: space-between;
+		height: auto;
+
+		.d-btn {
+			padding: 4px 24px;
+		}
+	}
+
+	.d-navbar-nav {
+		order: 2;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.d-nav-item {
+		margin-right: 0;
+	}
+
+	.d-navbar-logo {
+		position: static;
+
+		img {
+			width: 48px;
+		}
+	}
+
+	.d-section-hero {
+		background-position: 80% 50%;
+		padding: 32px 0;
+	}
+
+	.d-section-hero-title {
+		font-size: 1.42rem;
+		line-height: 1.6;
+	}
+
+	.d-section {
+		padding-top: 24px;
+		padding-bottom: 48px;
+
+		&--testimonials {
+			background: $color-secondary-darker;
+
+			.d-section-h3 {
+				color: $color-primary;
+				font-size: 0.85rem;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.d-plans {
+		text-align: left;
+
+		p {
+			padding: 0;
+			text-align: left;
+			min-height: none;
+			margin-bottom: 24px;
+		}
+
+		img {
+			margin-bottom: 23px;
+		}
+	}
+
+	.d-section-paragraph {
+		padding: 0;
+	}
+
+	.background-dark .d-section-paragraph {
+		margin-bottom: 0;
+	}
+
+	.d-section-h5 {
+		text-transform: uppercase;
+		margin-bottom: 8px;
+		margin-top: 40px;
+	}
+
+	.d-section-h2 {
+		font-size: 1.42rem;
+		margin-bottom: 16px;
+	}
+
+	.d-plans {
+		margin-top: 54px;
+	}
+
+	.d-swiper-slide {
+		background: transparent;
+		padding: 0;
+	}
+
+	.d-swiper-slide-name {
+		color: $color-white;
+	}
+
+	.d-swiper-slide-company {
+		color: $color-white;
+		opacity: 0.6;
+	}
+
+	.d-swiper-slide-paragraph {
+		color: $color-white;
+		font-size: 1.14rem;
+		line-height: 1.8;
+	}
+
+	.d-about-img-wrapper {
+		padding-right: 20px;
+	}
+
+	.d-about-img-wrapper:after {
+		width: 120px;
+		height: 120px;
+		top: -20px;
+		right: -10px;
+	}
+
+	.d-about-img-wrapper--offset {
+		margin-top: 48px;
+	}
+
+	.d-section-quote {
+		margin-top: 32px;
+		padding-right: 0;
+		font-size: 1.14rem;
+		margin-bottom: 24px;
+	}
+
+	.d-section.background-dark {
+		padding: 40px 0;
+	}
+
+	.d-footer {
+		padding: 8px 0 24px 0;
+	}
+
+	.d-section-contact {
+		font-size: 1.14rem;
+		font-weight: 400;
+		font-family: 'Roboto';
+	}
+
+	.d-footer-container {
+		flex-direction: column-reverse;
+	}
+
+	.d-footer-links {
+		flex-direction: column;
+	}
+
+	.d-footer-link {
+		padding: 16px 0;
+	}
+
+	.d-footer-link:last-child {
+		font-weight: 500;
+		padding-bottom: 40px;
 	}
 }
