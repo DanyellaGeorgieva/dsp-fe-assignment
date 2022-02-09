@@ -39,8 +39,7 @@ h6 {
 }
 
 .d-section.background-dark {
-	padding-top: 120px;
-	padding-bottom: 112px;
+	padding: 120px 0;
 }
 
 .background-dark {
@@ -56,6 +55,22 @@ h6 {
 		font-size: 0.875rem;
 		margin-bottom: 88px;
 	}
+}
+
+.d-no-offset {
+	padding-bottom: 0;
+}
+
+.d-top-offset {
+	margin-top: 120px;
+
+	&--small {
+		margin-top: 80px;
+	}
+}
+
+.d-right-offset {
+	padding-right: 100px;
 }
 
 .d-navbar {
@@ -128,14 +143,11 @@ h6 {
 
 	&-paragraph {
 		color: $color-grey-1;
-
-		&--offset {
-			padding-right: 100px;
-		}
 	}
 
 	&-img {
 		width: 100%;
+		height: auto;
 	}
 
 	&-h2 {
@@ -154,6 +166,15 @@ h6 {
 		margin-bottom: 24px;
 	}
 
+	&--testimonials {
+		padding-top: 112px;
+		padding-bottom: 120px;
+	}
+
+	&--how-it-works {
+		padding-bottom: 0;
+	}
+
 	&-contact {
 		color: $color-primary;
 		font-family: 'Poppins', sans-serif;
@@ -169,8 +190,8 @@ h6 {
 		}
 	}
 
-	&--no-offset {
-		padding-bottom: 0;
+	&-social-icon {
+		margin-right: 16px;
 	}
 }
 
@@ -302,12 +323,9 @@ h6 {
 		right: -40px;
 	}
 
-	&--offset {
-		margin-top: 120px;
-	}
-
 	img {
 		width: 100%;
+		height: auto;
 	}
 }
 
@@ -532,8 +550,12 @@ h6 {
 		right: -10px;
 	}
 
-	.d-about-img-wrapper--offset {
+	.d-top-offset {
 		margin-top: 48px;
+
+		&--small {
+			margin-top: 0;
+		}
 	}
 
 	.d-section-quote {
